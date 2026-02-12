@@ -1,4 +1,4 @@
-/* Page setup */
+/* style me crazy */
 body {
 	margin: 0;
 	font-family: Arial, sans-serif;
@@ -61,7 +61,7 @@ h1 {
 	backface-visibility: hidden;
 }
 
-/* Front of card (default view) */
+/* Front of card (Myabe in future when its a game make the fronts a little animated) */
 .card-front {
 	background-color: #444;
 }
