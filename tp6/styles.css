@@ -1,0 +1,75 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #eef2f5;
+}
+
+/* App container */
+.weather-app {
+  max-width: 400px;
+  margin: auto;
+  background: white;
+  min-height: 100vh;
+}
+
+/* Current weather */
+.current {
+  padding: 2rem;
+  text-align: center;
+  background: #87ceeb;
+  color: white;
+}
+
+.temp {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.condition {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Forecast */
+.forecast {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.day {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+  background: #fafafa;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .weather-app {
+    max-width: 900px;
+  }
+
+  .forecast {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
