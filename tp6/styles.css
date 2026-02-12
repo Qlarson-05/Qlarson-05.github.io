@@ -63,7 +63,7 @@ body {
   background: #fafafa;
 }
 
-/* Desktop */
+/* Desktop Layout */
 @media (min-width: 768px) {
   .weather-app {
     max-width: 900px;
