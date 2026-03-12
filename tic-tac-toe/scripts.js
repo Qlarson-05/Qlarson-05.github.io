@@ -1,9 +1,8 @@
 // declare the board data for a game, using 3 arrays
 // "-" indicates unmarked, "x" indicates an X mark, "o" indicates an O mark
-let rowA = [ "-", "o", "o" ];
-let rowB = [ "o", "x", "x" ];
-let rowC = [ "x", "o", "x" ];
-
+let rowA = [ "-", "-", "-" ];
+let rowB = [ "-", "-", "-" ];
+let rowC = [ "-", "-", "-" ];
 
 
 
