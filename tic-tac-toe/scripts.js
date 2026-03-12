@@ -24,14 +24,10 @@ function checkGameboard(a, b, c) {
     }
   }
 
-  let gameOver = false;
-  if(gameOver){
-return;
-}
-gameOver = true;
 
 // track player turn
 let currentPlayer = "x";
+
 
 // get all cells
 let cells = document.querySelectorAll(".cell");
@@ -39,14 +35,18 @@ let cells = document.querySelectorAll(".cell");
 // get turn display
 let turnDisplay = document.querySelector("#turn");
 
-// add click events to cells
 cells.forEach(function(cell, index){
 
 cell.addEventListener("click", function(){
 
+// stop game if someone already won
+if(gameOver){
+return;
+}
+
 console.log("Cell clicked:", index);
 
-// prevent double click
+// prevent clicking filled cells
 if(cell.innerHTML !== ""){
 return;
 }
@@ -67,30 +67,27 @@ else{
 rowC[index - 6] = currentPlayer;
 }
 
-console.log(rowA,rowB,rowC);
-
-// check winner
+// check for winner
 let result = checkGameboard(rowA,rowB,rowC);
 
 if(result === "x"){
 document.querySelector("#gameResult span").innerHTML = "X WINS!";
+gameOver = true;
 return;
 }
 
 if(result === "o"){
 document.querySelector("#gameResult span").innerHTML = "O WINS!";
+gameOver = true;
 return;
 }
 
-// switch players
+// switch player
 if(currentPlayer === "x"){
 currentPlayer = "o";
 }else{
 currentPlayer = "x";
 }
-
-// update turn display
-turnDisplay.innerHTML = "TURN: PLAYER " + currentPlayer.toUpperCase();
 
 });
 
