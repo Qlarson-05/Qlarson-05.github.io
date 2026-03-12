@@ -25,77 +25,69 @@ function checkGameboard(a, b, c) {
     }
   }
 
-  // track whose turn it is
+// track player turn
 let currentPlayer = "x";
 
-// get all tic tac toe squares
-let squares = document.querySelectorAll(".square");
+// get all cells
+let cells = document.querySelectorAll(".cell");
 
-// display whose turn it is
+// get turn display
 let turnDisplay = document.querySelector("#turn");
-turnDisplay.innerHTML = "TURN: PLAYER X";
 
+// add click events to cells
+cells.forEach(function(cell, index){
 
-// add click event to each square
-squares.forEach(function(square){
+cell.addEventListener("click", function(){
 
-  square.addEventListener("click", function(){
+console.log("Cell clicked:", index);
 
-    console.log("Square clicked");
+// prevent double click
+if(cell.innerHTML !== ""){
+return;
+}
 
-    // prevent clicking filled squares
-    if(square.innerHTML !== ""){
-      return;
-    }
+// place mark
+cell.innerHTML = currentPlayer;
 
-    // place X or O on board
-    square.innerHTML = currentPlayer;
+// update board arrays
+if(index < 3){
+rowA[index] = currentPlayer;
+}
 
-    // get row and column from HTML data attributes
-    let row = square.dataset.row;
-    let col = square.dataset.col;
+else if(index < 6){
+rowB[index - 3] = currentPlayer;
+}
 
-    console.log("Row:", row, "Column:", col);
+else{
+rowC[index - 6] = currentPlayer;
+}
 
-    // update game arrays
-    if(row === "A"){
-      rowA[col] = currentPlayer;
-    }
+console.log(rowA,rowB,rowC);
 
-    if(row === "B"){
-      rowB[col] = currentPlayer;
-    }
+// check winner
+let result = checkGameboard(rowA,rowB,rowC);
 
-    if(row === "C"){
-      rowC[col] = currentPlayer;
-    }
+if(result === "x"){
+document.querySelector("#gameResult span").innerHTML = "X WINS!";
+return;
+}
 
-    console.log("Board state:", rowA, rowB, rowC);
+if(result === "o"){
+document.querySelector("#gameResult span").innerHTML = "O WINS!";
+return;
+}
 
-    // check if someone won
-    let result = checkGameboard(rowA,rowB,rowC);
+// switch players
+if(currentPlayer === "x"){
+currentPlayer = "o";
+}else{
+currentPlayer = "x";
+}
 
-    if(result === "x"){
-      document.querySelector("#gameResult span").innerHTML = "X WINS!";
-      return;
-    }
+// update turn display
+turnDisplay.innerHTML = "TURN: PLAYER " + currentPlayer.toUpperCase();
 
-    if(result === "o"){
-      document.querySelector("#gameResult span").innerHTML = "O WINS!";
-      return;
-    }
-
-    // switch turns
-    if(currentPlayer === "x"){
-      currentPlayer = "o";
-    }else{
-      currentPlayer = "x";
-    }
-
-    // update turn display
-    turnDisplay.innerHTML = "TURN: PLAYER " + currentPlayer.toUpperCase();
-
-  });
+});
 
 });
 
