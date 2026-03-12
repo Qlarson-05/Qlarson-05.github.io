@@ -24,6 +24,12 @@ function checkGameboard(a, b, c) {
     }
   }
 
+  let gameOver = false;
+  if(gameOver){
+return;
+}
+gameOver = true;
+
 // track player turn
 let currentPlayer = "x";
 
