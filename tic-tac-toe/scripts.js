@@ -50,7 +50,7 @@ return;
 // place mark
 cell.innerHTML = currentPlayer;
 
-// update board arrays
+// update board
 if(index < 3){
 rowA[index] = currentPlayer;
 }
