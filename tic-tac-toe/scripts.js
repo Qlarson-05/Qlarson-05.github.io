@@ -25,6 +25,80 @@ function checkGameboard(a, b, c) {
     }
   }
 
+  // track whose turn it is
+let currentPlayer = "x";
+
+// get all tic tac toe squares
+let squares = document.querySelectorAll(".square");
+
+// display whose turn it is
+let turnDisplay = document.querySelector("#turn");
+turnDisplay.innerHTML = "TURN: PLAYER X";
+
+
+// add click event to each square
+squares.forEach(function(square){
+
+  square.addEventListener("click", function(){
+
+    console.log("Square clicked");
+
+    // prevent clicking filled squares
+    if(square.innerHTML !== ""){
+      return;
+    }
+
+    // place X or O on board
+    square.innerHTML = currentPlayer;
+
+    // get row and column from HTML data attributes
+    let row = square.dataset.row;
+    let col = square.dataset.col;
+
+    console.log("Row:", row, "Column:", col);
+
+    // update game arrays
+    if(row === "A"){
+      rowA[col] = currentPlayer;
+    }
+
+    if(row === "B"){
+      rowB[col] = currentPlayer;
+    }
+
+    if(row === "C"){
+      rowC[col] = currentPlayer;
+    }
+
+    console.log("Board state:", rowA, rowB, rowC);
+
+    // check if someone won
+    let result = checkGameboard(rowA,rowB,rowC);
+
+    if(result === "x"){
+      document.querySelector("#gameResult span").innerHTML = "X WINS!";
+      return;
+    }
+
+    if(result === "o"){
+      document.querySelector("#gameResult span").innerHTML = "O WINS!";
+      return;
+    }
+
+    // switch turns
+    if(currentPlayer === "x"){
+      currentPlayer = "o";
+    }else{
+      currentPlayer = "x";
+    }
+
+    // update turn display
+    turnDisplay.innerHTML = "TURN: PLAYER " + currentPlayer.toUpperCase();
+
+  });
+
+});
+
   console.log("Checking columns...");
 
   // Colum checker
