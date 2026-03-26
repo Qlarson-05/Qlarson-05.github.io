@@ -1,4 +1,6 @@
-// get all cards
+document.addEventListener("DOMContentLoaded", () => {
+
+});// get all cards
 let cards = document.querySelectorAll(".card");
 
 // track flipped cards
