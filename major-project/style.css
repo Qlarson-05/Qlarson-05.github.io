@@ -50,3 +50,8 @@ button {
 .affirmation {
   width: 200px;
 }
+
+button:hover {
+  background: #666;
+  color: white;
+}
