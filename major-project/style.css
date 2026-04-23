@@ -1,22 +1,59 @@
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: #121212;
+  background: #444;
   color: white;
+  font-family: Arial;
+  text-align: center;
 }
 
-button {
-  margin: 10px;
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
+h1 {
+  text-align: left;
+  margin-left: 20px;
 }
 
-#mood-buttons, .filters {
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 20px;
 }
 
-#results {
-  margin-top: 30px;
+.moods button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* MAIN LAYOUT */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* BOXES */
+.box {
+  background: #bbb;
+  color: black;
+  width: 150px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SIDE BOXES */
+.info {
+  width: 200px;
+}
+
+.affirmation {
+  width: 200px;
 }
