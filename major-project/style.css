@@ -55,3 +55,7 @@ button:hover {
   background: #666;
   color: white;
 }
+
+body {
+  transition: background 0.5s ease;
+}
