@@ -9,40 +9,44 @@
 
   <h1>How ya feelin?</h1>
 
-<div class="top-section">
-  <div class="moods">
-    <button>😊 Happy</button>
-    <button>😢 Sad</button>
-    <button>😵 Stressed</button>
-    <button>😐 Bored</button>
+  <div class="top-section">
+    
+    <!-- mood -->
+    <div class="moods">
+      <button onclick="setMood('happy')">😊 Happy</button>
+      <button onclick="setMood('sad')">😢 Sad</button>
+      <button onclick="setMood('stressed')">😵 Stressed</button>
+      <button onclick="setMood('bored')">😐 Bored</button>
+    </div>
+
+    <!-- categories -->
+    <div class="categories">
+      <button>🎬 Movies</button>
+      <button>🎧 Music</button>
+      <button>🎲 Activities</button>
+    </div>
+
   </div>
 
-  <div class="categories">
-    <button>🎬 Movies</button>
-    <button>🎧 Music</button>
-    <button>🎲 Activities</button>
-  </div>
-</div>
+  <!-- main stuff -->
+  <div class="main">
+    <div class="box info" id="info">Additional Info</div>
 
-<div class="main">
-  <div class="box info">Additional Info</div>
+    <div class="box" id="song">Song</div>
+    <div class="box" id="movie">Movie</div>
+    <div class="box" id="activity">Activity</div>
 
-  <div class="box">Song</div>
-  <div class="box">Movie</div>
-  <div class="box">Activity</div>
-
-  <div class="box affirmation">Affirmation</div>
-</div>
-
-  <div id="results">
-    <!-- Note: I want results here -->
+    <div class="box affirmation" id="affirmation">Affirmation</div>
   </div>
 
+  <!-- Note: I want results here -->
+  <div id="results"></div>
+
+  <!-- dark mode (not done yet) (do later) (you got this) -->
   <div class="toggle">
     <label>Dark mode</label>
     <input type="checkbox">
   </div>
-</div>
 
   <script src="script.js"></script>
 </body>
