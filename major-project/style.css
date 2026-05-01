@@ -59,3 +59,19 @@ button:hover {
 body {
   transition: background 0.5s ease;
 }
+
+#movie {
+  flex-direction: column;
+  padding: 10px;
+}
+
+#movie img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+#movie p {
+  font-size: 14px;
+  margin-top: 10px;
+}

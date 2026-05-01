@@ -6,7 +6,6 @@ function setMood(mood) {
   const affirmation = document.getElementById("affirmation");
   const info = document.getElementById("info");
 
-  // mood visuals
   if (mood === "happy") {
     document.body.style.background = "#FFD93D";
     affirmation.textContent = "Keep shining ☀️";
@@ -42,7 +41,11 @@ function getMovie(genre) {
 
   fetch(url)
     .then(res => res.json())
-    .then(data => displayMovie(data.results[0]));
+    .then(data => {
+      const randomIndex = Math.floor(Math.random() * data.results.length);
+      const randomMovie = data.results[randomIndex];
+      displayMovie(randomMovie);
+    });
 }
 
 // show movie
