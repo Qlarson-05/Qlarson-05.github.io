@@ -112,3 +112,34 @@ button:hover {
 .toggle {
   margin-top: 20px;
 }
+
+/* the darkest mode ever */
+.dark-mode {
+  background: #111 !important;
+  color: white;
+}
+
+
+.dark-mode .box {
+  background: #222;
+  color: white;
+}
+
+
+.dark-mode .movie-card {
+  background: #333;
+}
+
+.dark-mode .movie-card p {
+  color: white;
+}
+
+
+.dark-mode button {
+  background: #333;
+  color: white;
+}
+
+.dark-mode button:hover {
+  background: #555;
+}
