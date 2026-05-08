@@ -3,75 +3,112 @@ body {
   color: white;
   font-family: Arial, sans-serif;
   text-align: center;
+  transition: background 0.5s ease;
 }
 
-/* TOP PART */
+/* title */
+h1 {
+  margin-top: 20px;
+}
+
+/* top */
 .top-section {
   margin-top: 20px;
 }
 
-.moods, .categories {
+.moods,
+.categories {
   margin: 10px 0;
 }
 
+/* buttons */
 button {
   margin: 5px;
   padding: 10px 15px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
+  transition: 0.2s ease;
 }
 
-/* HOPEFULLY FIXED MAIN LAYOUT */
+button:hover {
+  background: #666;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* main */
 .main {
   display: flex;
   justify-content: center;
   align-items: stretch;
   gap: 20px;
   margin-top: 40px;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 
-/* BOXES */
+/* general */
 .box {
   background: #ccc;
   color: black;
-  width: 150px;
-  height: 250px;
+  width: 180px;
+  min-height: 300px;
+  border-radius: 15px;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
 }
 
-/* SIDE PANELS */
-.info {
-  width: 200px;
-}
-
+/* info and affirmation space */
+.info,
 .affirmation {
-  width: 200px;
+  width: 220px;
 }
 
-button:hover {
-  background: #666;
-  color: white;
-}
-
-body {
-  transition: background 0.5s ease;
-}
-
-#movie {
+/* movie */
+.movie-box {
+  width: 400px;
   flex-direction: column;
-  padding: 10px;
+  justify-content: flex-start;
+  overflow-y: auto;
 }
 
-#movie img {
+/* movie grid */
+#movie-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  margin-top: 10px;
 }
 
-#movie p {
-  font-size: 14px;
-  margin-top: 10px;
+/* movie cards */
+.movie-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+}
+
+.movie-card img {
+  width: 100%;
+  display: block;
+}
+
+.movie-card p {
+  padding: 8px;
+  font-size: 13px;
+  color: black;
+}
+
+/* dark mode toggle */
+.toggle {
+  margin-top: 20px;
 }

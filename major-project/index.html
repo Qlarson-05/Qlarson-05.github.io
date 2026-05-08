@@ -5,13 +5,14 @@
   <title>Vibe Recommender</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <h1>How ya feelin?</h1>
 
   <div class="top-section">
-    
-    <!-- mood -->
+
+    <!-- moods -->
     <div class="moods">
       <button onclick="setMood('happy')">😊 Happy</button>
       <button onclick="setMood('sad')">😢 Sad</button>
@@ -19,7 +20,7 @@
       <button onclick="setMood('bored')">😐 Bored</button>
     </div>
 
-    <!-- categories -->
+    <!-- category -->
     <div class="categories">
       <button>🎬 Movies</button>
       <button>🎧 Music</button>
@@ -28,26 +29,44 @@
 
   </div>
 
-  <!-- main stuff -->
+  <!-- main -->
   <div class="main">
-    <div class="box info" id="info">Additional Info</div>
 
-    <div class="box" id="song">Song</div>
-    <div class="box" id="movie">Movie</div>
-    <div class="box" id="activity">Activity</div>
+    <!-- info -->
+    <div class="box info" id="info">
+      Additional Info
+    </div>
 
-    <div class="box affirmation" id="affirmation">Affirmation</div>
+    <!-- song (maybe) -->
+    <div class="box" id="song">
+      Song
+    </div>
+
+    <!-- movies -->
+    <div class="box movie-box">
+      <h3>Movies</h3>
+      <div id="movie-grid"></div>
+    </div>
+
+    <!-- activity -->
+    <div class="box" id="activity">
+      Activity
+    </div>
+
+    <!-- you got this! -->
+    <div class="box affirmation" id="affirmation">
+      Affirmation
+    </div>
+
   </div>
 
-  <!-- Note: I want results here -->
-  <div id="results"></div>
-
-  <!-- dark mode (not done yet) (do later) (you got this) -->
+  <!-- dark mode toggle -->
   <div class="toggle">
     <label>Dark mode</label>
     <input type="checkbox">
   </div>
 
   <script src="script.js"></script>
+
 </body>
 </html>
