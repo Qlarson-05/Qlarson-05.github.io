@@ -108,7 +108,7 @@ function displayMovies(movies) {
   const shuffled =
     movies.sort(() => 0.5 - Math.random());
 
-  // SHOW FIRST 4
+  // show first 4
   shuffled.slice(0, 4).forEach(movie => {
 
     movieGrid.innerHTML += `
