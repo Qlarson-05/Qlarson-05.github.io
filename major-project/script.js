@@ -134,3 +134,12 @@ function displayMovies(movies) {
     `;
   });
 }
+
+// dark mode toggle
+const darkToggle = document.getElementById("darkToggle");
+
+darkToggle.addEventListener("change", () => {
+
+  document.body.classList.toggle("dark-mode");
+
+});
